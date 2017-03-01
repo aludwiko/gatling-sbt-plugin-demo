@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 
 class ComplexScenarioV2 extends MySimulation {
 
-  val complexScenario = scenario("Scenario Name")
+  val complexScenario = scenario("Complex demo scenario")
     .exec(goToRootPage)
     .pause(7)
     .exec(searchFor("macbook"))

@@ -22,7 +22,7 @@ class ComplexScenarioV3 extends MySimulation {
     .pause(1)
     .exec(addNewComputer)
 
-  val complexScenario = scenario("Scenario Name").exec(search, addComputer)
+  val complexScenario = scenario("Complex demo scenario").exec(search, addComputer)
 
   setUp(complexScenario.inject(atOnceUsers(1)).protocols(httpConf))
 }

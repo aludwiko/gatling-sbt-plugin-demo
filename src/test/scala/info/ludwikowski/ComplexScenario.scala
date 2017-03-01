@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 
 class ComplexScenario extends MySimulation{
 
-  val complexScenario = scenario("Scenario Name")
+  val complexScenario = scenario("Complex demo scenario")
     .exec(http("request_1").get("/"))
     .pause(7)
     .exec(http("request_2").get("/computers?f=macbook"))

@@ -10,7 +10,6 @@ import io.gatling.http.Predef._
 class ChecksExample extends MySimulation {
 
   val firstScenario = scenario("First Scenario Name")
-      .exec(addCookie())
     .exec(
       http("Request name")
         .get("/computers")
