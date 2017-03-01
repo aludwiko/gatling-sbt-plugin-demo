@@ -7,14 +7,14 @@ import io.gatling.http.Predef._
 
 class ComplexScenarioV3 extends MySimulation {
 
-  val search = exec(rootPage)
+  val search = exec(goToRootPage)
     .pause(7)
     .exec(searchFor("macbook"))
     .pause(2)
     .exec(positionAt(6))
     .pause(3)
 
-  val addComputer = exec(rootPage)
+  val addComputer = exec(goToRootPage)
     .pause(2)
     .exec(goToPage(1))
     .pause(670 milliseconds)
