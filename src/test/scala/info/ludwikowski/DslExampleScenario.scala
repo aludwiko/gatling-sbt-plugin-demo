@@ -12,7 +12,10 @@ class DslExampleScenario extends MySimulation {
   }.doIf(session => session("user").as[String].startsWith("admin")) {
     // executed if the session value stored in "myKey" starts with "admin"
     exec(goToAdminPage)
-  }
+  }.exec(sendMoney)
+    .tryMax(10){
+      exec(receiveMoney)
+    }
 
 
   val complexScenario = scenario("Complex demo scenario").exec(search)

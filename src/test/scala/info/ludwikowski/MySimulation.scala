@@ -17,6 +17,10 @@ abstract class MySimulation extends Simulation {
 
   val goToAdminPage = goToRootPage
 
+  val sendMoney = goToAdminPage
+
+  val receiveMoney = goToAdminPage
+
   def searchFor(query: String) = http("search for").get("/computers?f=" + query)
 
   def positionAt(index: Int) = http("position at").get("/computers/" + index)
