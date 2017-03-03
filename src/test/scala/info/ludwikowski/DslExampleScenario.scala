@@ -18,6 +18,11 @@ class DslExampleScenario extends MySimulation {
     .tryMax(10) {
       exec(receiveMoney)
     }
+    .exec(
+      polling
+        .every(10 seconds)
+        .exec(searchFor("thinkpad"))
+    )
 
   val myScenario = scenario("Complex demo scenario").exec(search)
 
