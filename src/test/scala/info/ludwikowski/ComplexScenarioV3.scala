@@ -1,6 +1,5 @@
 package info.ludwikowski
 
-import io.gatling.core.Predef.{atOnceUsers, scenario, _}
 import scala.concurrent.duration._
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
