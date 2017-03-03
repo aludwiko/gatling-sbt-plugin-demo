@@ -7,10 +7,13 @@ import io.gatling.http.Predef._
 class DslExampleScenario extends MySimulation {
 
   val search =  repeat(5, "i") {
-    exec(http("Page ${i}")
-      .get("/computers?p=${i}"))
+    exec(goToPage("${i}".toInt))
       .pause(1)
+  }.doIf(session => session("user").as[String].startsWith("admin")) {
+    // executed if the session value stored in "myKey" starts with "admin"
+    exec(goToAdminPage)
   }
+
 
   val complexScenario = scenario("Complex demo scenario").exec(search)
 

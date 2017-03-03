@@ -15,6 +15,8 @@ abstract class MySimulation extends Simulation {
 
   val goToRootPage = http("root page").get("/")
 
+  val goToAdminPage = goToRootPage
+
   def searchFor(query: String) = http("search for").get("/computers?f=" + query)
 
   def positionAt(index: Int) = http("position at").get("/computers/" + index)
