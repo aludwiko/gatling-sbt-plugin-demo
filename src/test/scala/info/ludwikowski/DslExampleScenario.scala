@@ -3,9 +3,20 @@ package info.ludwikowski
 import io.gatling.core.Predef.{atOnceUsers, exec, scenario}
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+
 import scala.concurrent.duration._
+import scala.util.Random
 
 class DslExampleScenario extends MySimulation {
+
+  val companies = List("apple", "levono", "hp")
+
+  val feeder = Iterator.continually(
+    Map("company" -> companies(Random.nextInt(companies.size))))
+
+  val searching = scenario("Searching")
+    .feed(feeder)
+    .exec(searchFor("${company}"))
 
   val search = repeat(5, "i") {
     exec(goToPage("${i}".toInt))
